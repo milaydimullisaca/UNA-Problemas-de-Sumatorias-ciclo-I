@@ -1,0 +1,36 @@
+#include <iostream>
+#include <chrono>
+#include <thread>
+
+using namespace std;
+
+int main() {
+   int horas = 0;
+    int minutos = 0;
+    int segundos = 0;
+
+    
+     system("clear"); 
+      while (true) {
+          
+        
+        cout <<"\rReloj:"<<horas << ":" << minutos << ":" << segundos<<flush;
+
+        segundos++;
+        if (segundos == 60) {
+            minutos++;
+            segundos = 0;
+        }
+        if (minutos == 60) {
+            horas++;
+            minutos = 0;
+        }
+        if (horas == 24) {
+            horas = 0;
+        }
+this_thread::sleep_for(chrono::seconds(1)); // Esperar 1 segundo
+    }
+    
+
+    return 0;
+}
