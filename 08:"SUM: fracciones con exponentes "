@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingrese el número de términos (n): ";
+    cin >> n;
+
+    double SUM = 0;
+    cout << "SUM = ";
+
+    for (int i = 1; i <= n; i++) {
+        int numerador = 2 * i;
+        int denominador = 2 * i + 1;
+        double signo = (i % 2 == 0) ? -1 : 1;
+        double termino = signo * (double)numerador / pow(denominador, 3);
+
+        SUM += termino;
+
+        if(i == 1) 
+    cout << numerador << "/" << denominador << "^3";
+        else 
+         cout << " " << (signo == 1 ? "+" : "-") << " " << numerador << "/" << denominador << "^3";
+    }
+
+    cout << " = " << SUM << endl;
+
+    return 0;
+}
