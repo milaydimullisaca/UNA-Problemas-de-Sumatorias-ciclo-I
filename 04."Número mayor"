@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main() {
+ int n, mayor, indice;
+ cout << "Ingrese la cantidad de números: ";
+    cin >> n;
+   cout << "Ingrese el primer número: ";
+    cin >> mayor;
+    
+     for (int i = 2; i <= n; i++) {
+        int a;
+        cout << "Ingrese el número " << i << ": ";
+        cin >> a;
+       if (a > mayor) {
+            mayor = a;
+             }
+    }
+
+    cout << "El mayor es: " << mayor <<  endl;
+return 0;
+}
