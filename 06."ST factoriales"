@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n;
+    double x;
+    cout << "Ingrese el número de términos (N): ";
+    cin >> n;
+    cout << "Ingrese el valor de x: ";
+    cin >> x;
+
+    double ST = 0;
+    cout << "ST = ";
+    for (int i = 1; i <= n; i++) {
+        int denominador = 2 * i - 1;
+        double termino = pow(x, i) / tgamma(denominador + 1);
+        ST += termino;
+        cout << x << "^" << i << "/" << denominador << "!";
+        if (i < n) cout << " + ";
+    }
+    cout << " = " << ST << endl;
+
+    return 0;
+}
