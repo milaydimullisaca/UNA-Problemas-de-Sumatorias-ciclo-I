@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    double ST = 0;
+
+    cout << "Ingrese el número de términos (n): ";
+    cin >> n;
+
+    cout << "ST = ";
+    for (int i = 1; i <=n; i++) {
+        double termino;
+        if (i % 3 == 1) {
+            termino = 7 * ((i + 2) / 3);
+        } else { 
+            termino = -(i-1);
+           
+        }
+        ST += termino;
+
+        if (i > 1) {
+            cout << (termino >= 0 ? " + " : " - ");
+        }
+        cout << abs(termino); 
+    }
+
+    cout << " = " << ST << endl;
+    return 0;
+}
